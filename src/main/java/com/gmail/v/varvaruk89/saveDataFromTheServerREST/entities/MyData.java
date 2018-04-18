@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 
 @Entity
@@ -142,5 +143,28 @@ public class MyData implements Serializable {
                 ", dateModified=" + dateModified +
                 ", relatedItem='" + relatedItem + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyData)) return false;
+        MyData myData = (MyData) o;
+        return Objects.equals(getId(), myData.getId()) &&
+                Objects.equals(getHash(), myData.getHash()) &&
+                Objects.equals(getFormat(), myData.getFormat()) &&
+                Objects.equals(getUrl(), myData.getUrl()) &&
+                Objects.equals(getTitle(), myData.getTitle()) &&
+                Objects.equals(getDocumentOf(), myData.getDocumentOf()) &&
+                Objects.equals(getDatePublished(), myData.getDatePublished()) &&
+                Objects.equals(getDateModified(), myData.getDateModified()) &&
+                Objects.equals(getRelatedItem(), myData.getRelatedItem()) &&
+                Objects.equals(getGroupMyData(), myData.getGroupMyData());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId(), getHash(), getFormat(), getUrl(), getTitle(), getDocumentOf(), getDatePublished(), getDateModified(), getRelatedItem(), getGroupMyData());
     }
 }

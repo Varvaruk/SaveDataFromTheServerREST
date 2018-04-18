@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Component
-public class SaveToDataBaseImpl  implements SaveToDataBase{
+public class SaveToDataBaseImpl implements SaveToDataBase {
 
     @Autowired
     RestClient restClient;
@@ -26,9 +26,9 @@ public class SaveToDataBaseImpl  implements SaveToDataBase{
         GroupMyData groupMyData = myJsonParser.getDataFromJson(json);
         groupMyDataService.save(groupMyData);
         System.out.print(groupMyData.getId());
-        List<MyData> myDataList=groupMyData.getData();
-        for (MyData m:myDataList) {
-        m.setGroupMyData(groupMyData);
+        List<MyData> myDataList = groupMyData.getData();
+        for (MyData m : myDataList) {
+            m.setGroupMyData(groupMyData);
             myDataService.save(m);
         }
 

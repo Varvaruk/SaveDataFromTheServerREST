@@ -6,6 +6,6 @@ import java.io.IOException;
 
 @Service
 public interface RestClient {
-        String getJSONFromREST(String url) throws IOException;
+    String getJSONFromREST(String url) throws IOException;
 
 }

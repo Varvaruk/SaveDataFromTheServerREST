@@ -1,9 +1,11 @@
 package com.gmail.v.varvaruk89.saveDataFromTheServerREST.entities;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 
 @Entity
@@ -14,7 +16,7 @@ public class GroupMyData implements Serializable {
     private Long id;
 
 
-    @OneToMany(mappedBy = "groupMyData")
+    @OneToMany(mappedBy = "groupMyData", fetch = FetchType.EAGER)
     private List<MyData> data;
 
     public GroupMyData() {
@@ -42,5 +44,20 @@ public class GroupMyData implements Serializable {
                 "id=" + id +
                 ", data=" + data +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GroupMyData)) return false;
+        GroupMyData that = (GroupMyData) o;
+        return Objects.equals(getId(), that.getId()) &&
+                Objects.equals(getData(), that.getData());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId(), getData());
     }
 }

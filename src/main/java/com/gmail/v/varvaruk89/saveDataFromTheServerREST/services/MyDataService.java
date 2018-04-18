@@ -8,6 +8,9 @@ import java.util.List;
 @Service
 public interface MyDataService {
     List<MyData> findAll();
+
     void save(MyData myData);
+
+    MyData findById(String id);
 
 }
