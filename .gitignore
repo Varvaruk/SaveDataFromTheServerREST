@@ -16,7 +16,7 @@
 *.iml
 *.ipr
 *.json
-
+*..properties
 
 ### NetBeans ###
 /nbproject/private/
