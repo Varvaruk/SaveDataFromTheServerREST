@@ -2,14 +2,15 @@ package com.gmail.v.varvaruk89.saveDataFromTheServerREST.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gmail.v.varvaruk89.saveDataFromTheServerREST.entities.GroupMyData;
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 
-@Component
+@Service
 public class MyJsonParserImpl implements MyJsonParser {
 
     @Override

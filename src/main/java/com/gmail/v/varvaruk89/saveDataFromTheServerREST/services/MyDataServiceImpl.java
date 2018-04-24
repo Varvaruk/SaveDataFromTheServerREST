@@ -3,13 +3,13 @@ package com.gmail.v.varvaruk89.saveDataFromTheServerREST.services;
 import com.gmail.v.varvaruk89.saveDataFromTheServerREST.entities.MyData;
 import com.gmail.v.varvaruk89.saveDataFromTheServerREST.repo.MyDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Component
+@Service
 public class MyDataServiceImpl implements MyDataService {
 
     @Autowired

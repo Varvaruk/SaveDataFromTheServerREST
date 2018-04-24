@@ -4,11 +4,11 @@ import com.gmail.v.varvaruk89.saveDataFromTheServerREST.entities.GroupMyData;
 import com.gmail.v.varvaruk89.saveDataFromTheServerREST.entities.MyData;
 import com.gmail.v.varvaruk89.saveDataFromTheServerREST.repo.GroupMyDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class GroupMyDataServiceImpl implements GroupMyDataService {
     @Autowired
     GroupMyDataRepository groupMyDataRepository;

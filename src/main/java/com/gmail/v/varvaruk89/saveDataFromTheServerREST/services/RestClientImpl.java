@@ -3,11 +3,11 @@ package com.gmail.v.varvaruk89.saveDataFromTheServerREST.services;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-@Component
+@Service
 public class RestClientImpl implements RestClient {
 
     @Override
